@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador - Consultas Marcadas</title>
+</head>
+<body>
+    <div style='width:900px; margin:20px auto;'>
+        <a href="{% url 'register' %}">Marcar Nova Consulta</a>
+        <br><br>
+        {% for consulta in consultas %}
+            <div>
+                <h3>Nome do Paciente: {{ consulta.nome_do_paciente }} </h3>
+                <p>Procedimento Desejado: {{ consulta.procedimento }} </p>
+                <p>Sexo do Paciente: {{ consulta.get_sexo_display }} </p>
+                <p>Idade do Paciente: {{ consulta.idade }} </p>
+                <p>Dia da Consulta: {{ consulta.dia }} </p>
+                <p>Horário da Consulta: {{ consulta.horario }} </p>
+                <p><a class="btn btn-danger" href="{% url 'delete_consulta' consulta.id %}">Apagar Consulta Marcada</a></p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

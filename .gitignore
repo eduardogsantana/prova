@@ -1,0 +1,11 @@
+# created by virtualenv automatically
+# Pastas e Arquivos ENV
+Lib/
+Scripts/
+pyvenv.cfg
+base_statics/global/image/bootstrap-icons/
+# Arquivos Django #
+*.log
+*.pot
+*.pyc
+__pycache__

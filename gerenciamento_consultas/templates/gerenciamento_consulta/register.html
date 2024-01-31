@@ -1,0 +1,28 @@
+{% load bootstrap5 %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador - Marcar Consulta</title>
+    {% bootstrap_css %}
+</head>
+<body>
+    <h2>Marcar Consulta</h2>
+    <a href="{% url 'index' %}">Página Inicial</a>
+    <div class="container">
+        {% bootstrap_messages %}
+        <form action="{% url 'register' %}" method="post" class="form" autocomplete="off" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% buttons %}
+                <button type="submit" class="btn-primary">Marcar Consulta</button>
+                {% endbuttons %}
+            
+
+        </form>
+    </div>
+    {% bootstrap_javascript %}
+    
+</body>
+</html>
